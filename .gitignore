@@ -1,0 +1,4 @@
+// Ignore Account Keys
+serviceAccountKey.json
+archiveServiceAccountKey.json
+
