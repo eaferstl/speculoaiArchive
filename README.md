@@ -1,6 +1,8 @@
 # Firestore Archival Script
 
-This repository contains a script for archiving documents from a **Contacts** collection in Firestore to an **archive_Contacts** collection based on a specified `organization_id`. The script supports both **live runs** and **dry runs** to help ensure data integrity during the archival process.
+This repository contains two scripts for archiving documents in a Firestore Database:
+- From a **Contacts** collection in Firestore to an **archive_Contacts** collection based on a specified `organization_id`. The script supports both **live runs** and **dry runs** to help ensure data integrity during the archival process.
+- From an **Organization** collection in Firestore to an **archive_Organization** collection based on a specified `organization_id`. The script supports both **live runs** and **dry runs** to help ensure data integrity during the archival process.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -12,7 +14,7 @@ This repository contains a script for archiving documents from a **Contacts** co
 - [License](#license)
 
 ## Project Overview
-The goal of this project is to allow organizations to easily archive old or unused documents from a primary Firestore collection (`Contacts`) to a separate archive collection (`archive_Contacts`). This helps in maintaining the size and performance of the live collection.
+The goal of this project is to allow organizations to easily archive old or unused documents from a primary Firestore collection to a separate archive collection. This helps in maintaining the size and performance of the live collection.
 
 ## Features
 - Archives documents based on a given `organization_id`.
@@ -21,11 +23,13 @@ The goal of this project is to allow organizations to easily archive old or unus
 - Logs actions and errors for auditing purposes.
 
 ## Setup
-- N/a
+- Download any necessary packages to run the necessary code such as node
 
 ## Usage
-- To run the script, use the following command: node archiveContactsFromOrg.js --org=organization-id
-- To perform a dry run (test mode), add the --dryRun flag as follows: node archiveContactsFromOrg.js --org=organization-id --dryRun
+- To run the Contacts script, use the following command: node archiveContactsFromOrg.js --org=organization-id
+- To perform a dry run (test mode) for the Contacts script, add the --dryRun flag as follows: node archiveContactsFromOrg.js --org=organization-id --dryRun
+- To run the Organization script, first run the Contacts script and then use the following command: node archiveOrganization.js --org=organization-id
+- To perform a dry run (test mode) for the Organization script, add the --dryRun flag as follows: node archiveOrganization.js -- org=organization-id --dryRun
 
 ### Prerequisites
 - **Node.js**: Ensure Node.js and npm are installed on your system.
