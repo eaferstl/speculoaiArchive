@@ -1,4 +1,7 @@
-// Ignore Account Keys
+# Exclude service account keys
 serviceAccountKey.json
 archiveServiceAccountKey.json
 
+# Exclude node_modules and logs
+node_modules/
+archive.log
